@@ -13,6 +13,7 @@ public class Main {
 		int baseHp = 25;
 		Thief t = new Thief("アサカ", baseHp);
 		System.out.println(baseHp + ":" + t.hp);
+		//int型変数baseHpは変化しない
 		heal(baseHp);
 		heal(t);
 		System.out.println(baseHp + ":" + t.hp);
