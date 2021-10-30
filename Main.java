@@ -1,8 +1,7 @@
 
 public class Main {
 	public static void main(String[] args) {
-		Hero h = new Hero();
-		h.name = "ミナト";
+		Hero h = new Hero("ミナト");
 		h.hp = 100;
 		
 		Matango m1 = new Matango();
@@ -26,7 +25,17 @@ public class Main {
 		m2.run();
 		h.run();
 		
-		c1.selfAid();
-		c1.pray(3);
+//		c1.selfAid();
+//		c1.pray(3);
+		
+		Wizard w1 = new Wizard();
+		w1.name = "魔道士";
+		w1.hp = 50;
+		
+		w1.heal(h);
+		
+		Hero h2 = new Hero("けんた");
+		System.out.println("HPの初期設定は" + h2.hp);
+		System.out.println("名前は" + h2.name);
 	}
 }

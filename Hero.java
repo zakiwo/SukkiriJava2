@@ -2,6 +2,19 @@
 public class Hero {
 	String name;
 	int hp;
+	
+	//コンストラクタ
+	public Hero(String name) {
+		this.hp = 100;
+		this.name = name;
+	}
+	
+	//コンストラクタのオーバーロード
+	public Hero() {
+		//上のコンストラクタを呼び出し
+		this("ダミー");
+	}
+	
 	public void attack() {
 		
 	}
