@@ -18,7 +18,11 @@ public class Wizard {
 	}
 	
 	public void setName(String name) {
-		this.name = name;
+		if(name == null || name.length() < 3) {
+			throw new IllegalArgumentException("魔法使いに設定されようとしている値が異常です");
+		}else {
+			this.name = name;
+		}
 	}
 	
 	public int getMp() {
@@ -26,6 +30,9 @@ public class Wizard {
 	}
 	
 	public void setMp(int mp) {
+		if(mp < 0) {
+			throw new IllegalArgumentException("設定されようとしているMPの値が異常です");
+		}
 		this.hp = mp;
 	}
 	
@@ -34,7 +41,11 @@ public class Wizard {
 	}
 	
 	public void setHp(int hp) {
-		this.hp = hp;
+		if(hp < 0) {
+			this.hp = 0;
+		}else {
+			this.hp = hp;
+		}
 	}
 	
 	public Wand getWand() {
@@ -42,6 +53,10 @@ public class Wizard {
 	}
 	
 	public void setWand(Wand wand) {
-		this.wand = wand;
+		if(wand == null) {
+			throw new IllegalArgumentException("設定されようとしている杖がnullです");
+		}else {
+			this.wand = wand;
+		}
 	}
 }
